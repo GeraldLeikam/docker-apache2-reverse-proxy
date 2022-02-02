@@ -5,6 +5,12 @@ if [ -z "$(ls -A /etc/apache2/)" ]
 then
   cp -rv /apache_orig/* /etc/apache2
 fi
+
+if [ -z "$(ls -A /etc/letsencrypt/)" ]
+then
+  cp -rv /letsencrypt_orig/* /etc/letsencrypt
+fi
+
 echo "ServerName ${SERVERNAME}" >> /etc/apache2/apache2.conf
 
 bin/bash -c "/usr/sbin/apache2ctl start"
