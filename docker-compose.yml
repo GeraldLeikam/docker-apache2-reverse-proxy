@@ -20,5 +20,5 @@ services:
     environment:
       - SERVERNAME='MySever'
     volumes:
-      - "./config/apache2:/etc/apache2"
+      - "./data/apache2:/etc/apache2"
     # - "./config/ports.conf:/etc/apache2/ports.conf"
