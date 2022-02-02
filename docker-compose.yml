@@ -1,0 +1,24 @@
+version: '3.3'
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+
+services:
+  apache-reverse-proxy:
+    image: "drezael/apache2-reverse-proxy:ubuntu_20.04"
+    container_name: reverse_proxy
+    restart: always
+    networks:
+      - internal
+      - web
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - SERVERNAME='MySever'
+    volumes:
+      - "./config/apache2.conf:/etc/apache2/apache2.conf"
+      - "./config/ports.conf:/etc/apache2/ports.conf"
