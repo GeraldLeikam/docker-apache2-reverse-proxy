@@ -6,4 +6,5 @@ fi
 bin/bash -c "/usr/sbin/apache2ctl start"
 certbot -n --apache --agree-tos -m gerald.leikam@aol.com -d sub1.apache-proxy.owncloud.works
 echo "ServerName ${SERVERNAME}" >> /etc/apache2/apache2.conf
-bin/bash -c "/usr/sbin/apache2ctl -DFOREGROUND"
+bin/bash -c "/usr/sbin/apache2ctl stop"
+bin/bash -c "/usr/sbin/apache2ctl -DFOREGROUD"
