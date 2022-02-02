@@ -21,4 +21,4 @@ services:
       - SERVERNAME='apache-proxy.owncloud.works'
     volumes:
       - "./data/apache2:/etc/apache2"
-    # - "./config/ports.conf:/etc/apache2/ports.conf"
+      - "./data/letsencrypt:/etc/letsencrypt"
