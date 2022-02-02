@@ -2,6 +2,6 @@ FROM drezael/apache2:ubuntu_20.04
 RUN apt install -y python3-certbot-apache
 RUN a2enmod proxy && a2enmod proxy_http && a2enmod proxy_ajp && a2enmod rewrite && a2enmod deflate && a2enmod headers && \
 a2enmod proxy_balancer && a2enmod proxy_connect && a2enmod proxy_html
-RUN mkdir /apache_orig && cp -r /etc/apache2
+RUN mkdir /apache_orig && cp -r /etc/apache2 /apache_orig
 COPY ./scripts/startup_reverse_proxy.sh /run/startup_reverse_proxy.sh
 CMD /bin/bash /run/startup_reverse_proxy.sh
