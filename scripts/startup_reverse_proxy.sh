@@ -1,4 +1,5 @@
 #!/bin/bash
+echo 'Starting reverse proxy'
 echo "ServerName ${SERVERNAME}" >> /etc/apache2/apache2.conf
 if [ -z "$(ls -A /etc/apache2/)" ]
 then
