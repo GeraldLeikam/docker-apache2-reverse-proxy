@@ -19,6 +19,6 @@ services:
       - "443:443"
     environment:
       - SERVERNAME='MySever'
-    volumes:
-      - "./config/apache2.conf:/etc/apache2/apache2.conf"
-      - "./config/ports.conf:/etc/apache2/ports.conf"
+    #volumes:
+    #  - "./config/apache2.conf:/etc/apache2/apache2.conf"
+    # - "./config/ports.conf:/etc/apache2/ports.conf"
